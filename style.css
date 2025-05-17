@@ -1,0 +1,247 @@
+:root {
+    --primary: #070054;
+    --accent: #d9d9d9;
+    --bgblack: #000000;
+    --twhite: #ffffff;
+    --hover-accent: #00d4ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: var(--bgblack);
+    color: var(--twhite);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--twhite);
+    font-size: 2.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+.logo img {
+    margin-right: 12px;
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+nav a {
+    color: var(--twhite);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.4s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2.5px;
+    left: 0;
+    bottom: -6px;
+    background-color: var(--hover-accent);
+    transition: width 0.35s ease;
+    border-radius: 2px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+header:hover {
+    background-color: #0a006f;
+}
+
+.hero {
+    height: 80vh;
+    display: flex;
+    background-color: var(--accent);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--twhite);
+    padding: 40px;
+    animation: fadeIn 2s ease-in-out;
+    overflow-wrap: break-word;
+    flex-direction: column;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px #000;
+    position: relative;
+}
+
+.hero h1::after {
+    content: "WELCOME";
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    white-space: nowrap;
+    animation: typing 3s steps(18) 1s forwards, blinkCaret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #00ffff;
+    text-shadow: 1px 1px 3px #000;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+    color: var(--bgblack);
+}
+
+.hero a {
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: #00bcd4;
+    color: var(--twhite);
+    font-weight: bold;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+}
+
+.hero a:hover {
+    background-color: #0097a7;
+    box-shadow: 0 8px 20px rgba(0, 151, 167, 0.6);
+}
+
+section {
+    padding: 80px 30px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.tech, .design, .intern, .projects {
+    background-color: #111111;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 50px 20px;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.1);
+}
+.tech:hover, .design:hover, .intern:hover, .projects:hover {
+    box-shadow: 0 30px 60px rgba(0, 212, 255, 0.85);
+}
+
+section h2 {
+    color: var(--hover-accent);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+section p, section h5 {
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin: 10px 0 20px;
+}
+
+section a {
+    text-decoration: none;
+    color: #000;
+    background-color: var(--hover-accent);
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 25px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+section a:hover {
+    background-color: #00a3cc;
+    color: var(--twhite);
+}
+
+.projects {
+    width: 90%;
+    margin: 40px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    color: #e0f7ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects:hover {
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.6);
+}
+
+.projects th, .projects td {
+    padding: 18px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    background-color: rgba(10, 10, 30, 0.85);
+    transition: background-color 0.3s ease;
+}
+
+.projects th {
+    background: linear-gradient(90deg, #003366, #0066cc);
+    color: var(--hover-accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+}
+
+.projects td:hover {
+    background-color: rgba(0, 212, 255, 0.15);
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--primary);
+    padding: 30px 20px;
+    text-align: center;
+    color: var(--twhite);
+}
+
+footer a {
+    color: var(--hover-accent);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
